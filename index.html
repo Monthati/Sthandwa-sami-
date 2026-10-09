@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>For You ❤️</title>
+  <meta name="description" content="A little letter, just for you.">
+  <meta name="theme-color" content="#4a0e1f">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@400;600&family=Dancing+Script:wght@600&family=Great+Vibes&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="hearts-layer" id="floatingHearts" aria-hidden="true"></div>
+  <div class="burst-layer" id="burst" aria-hidden="true"></div>
+
+  <!-- Invisible YouTube player for the background song -->
+  <div class="yt-hidden" aria-hidden="true"><div id="ytPlayer"></div></div>
+
+  <main>
+    <!-- Closed envelope -->
+    <section class="stage" id="stage">
+      <button class="envelope" id="envelope" type="button" aria-label="Open your letter">
+        <span class="env-back"></span>
+        <span class="env-letter"><span class="env-letter-lines"></span></span>
+        <span class="env-front"></span>
+        <span class="env-flap"></span>
+        <span class="seal">
+          <span class="seal-half seal-left">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/></svg>
+          </span>
+          <span class="seal-half seal-right">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/></svg>
+          </span>
+        </span>
+      </button>
+      <p class="hint">Tap to open 💌</p>
+    </section>
+
+    <!-- Open letter -->
+    <section class="letter-view" id="letterView" aria-hidden="true">
+      <article class="paper">
+        <div class="paper-scroll" id="paperScroll" tabindex="-1">
+          <h1 class="letter-title">For You</h1>
+          <div class="letter-body" id="letterBody"></div>
+        </div>
+        <div class="paper-actions">
+          <button class="btn btn-ghost" id="skipBtn" type="button">Skip ⏩</button>
+          <button class="btn btn-primary" id="againBtn" type="button" hidden>Read again ↺</button>
+        </div>
+      </article>
+    </section>
+  </main>
+
+  <script src="script.js"></script>
+  <script src="https://www.youtube.com/iframe_api" async></script>
+</body>
+</html>
